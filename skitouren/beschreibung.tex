@@ -1,0 +1,70 @@
+% HEADER
+\subsection{NAME \small{ELEVATION}}
+\def \mydate    {Di, 05.01.2016}
+\def \mypath    {skitouren/PATHNAME-05.01.2016}
+\def \myregion  {Allgäu - Kleinwalsertal}
+\def \myparking {ifen.p}
+\def \myseason  {Winter 2016}
+
+\def \headersize {0.54}
+\def \rating     {$\bigstar~\bigstar~\bigstar~\star$}
+\def \ascent     {709}
+\def \distance   {6.5}
+\def \LLB        {2}
+\def \starttime  {12.20}
+\def \movingtime {01:41}
+\def \overalltime{02:54}
+\def \summittime {02:00}
+\def \comrades   {-}
+\def \difficulty {$L$/1.3/Ex1}
+\def \startpoint {\framebox{P} Ifenbahn (3€)}
+
+\def \mapsize{0.5}
+\def \mapwrap{16}
+
+% y: greater y => higher elevation
+\def \myhtx{14}
+\def \myhty{-128}
+
+\def \sideimagewith{0.34}
+\def \bottomimageleft{0.47}
+\def \bottomimageright{0.47}
+
+\input{meta/vorlagen/winter.master.head.small.tex}
+% HEADER
+
+% MAINTEXT
+LOREM
+% MAINTEXT
+
+% SIDEIMAGE
+% \par \begin{wrapfigure}[10]{l}{\sideimagewith\textwidth}
+% 	\vspace{-1em}
+% 	\includegraphics[width=\sideimagewith\textwidth]{\mypath/bilder/hahnenkoepfle012016-05}
+% 	\vspace{-3em}
+% \end{wrapfigure}
+% \noindent
+% SIDEIMAGE
+
+% CONCLUSION
+\noindent$\blacktriangleright$
+IPSUM
+% CONCLUSION
+
+% BOTTOMIMAGE
+\hfill
+\vspace{-3em}
+\begin{figure}[b!]
+	\begin{subfigure}[b]{\bottomimageleft\textwidth}
+		\includegraphics[width=\textwidth]{\mypath/bilder/IMAGELEFT}
+		\caption{DESC1}
+		\vspace{-2em}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{\bottomimageright\textwidth}
+		\includegraphics[width=\textwidth]{\mypath/bilder/IMAGERIGHT}
+		\caption{DESC2}
+		\vspace{-2em}
+	\end{subfigure}
+\end{figure}
+% BOTTOMIMAGE
