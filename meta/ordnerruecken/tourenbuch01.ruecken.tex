@@ -1,0 +1,81 @@
+% Template for a folder backplate
+\documentclass[
+	  DIV=12
+	, a4paper
+	, fontsize=10pt
+	, footinclude
+	, headinclude
+	, plainfootsepline
+]{scrartcl}
+
+% Basic encoding stuff
+\usepackage[ngerman]{babel} % this is needed for umlauts
+\usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
+\usepackage[utf8]{inputenc} % this is needed for umlauts
+
+\usepackage[osf]{mathpazo}
+
+% Set up the page geometry
+\usepackage[papersize={61mm,198mm},hmargin=5mm,vmargin={10mm,3mm}]{geometry}
+% print instructions for the cutting layout
+\usepackage[cross,a4,center]{crop}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Left-flush with hyphenation
+\usepackage{ragged2e}
+
+% Hyperlinks
+\usepackage{hyperref}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{multicol}
+% MTB       Maroon    #AF3235
+% Skitour   RoyalBlue #006EB8
+\definecolor{skitour}{RGB}{0,110,184}
+\definecolor{mtb}{RGB}{175,50,53}
+\definecolor{einkehr}{RGB}{60,128,49}
+\definecolor{wandern}{RGB}{0,155,85}
+
+% Itemize Env
+\usepackage{amssymb}
+\renewcommand{\labelitemi}{\color{skitour}$\blacktriangleright$\hspace{-0.6em}}
+\renewcommand{\labelitemi}{\color{mtb}$\blacktriangleright$\hspace{-0.6em}}
+\renewcommand{\labelitemi}{\color{wandern}$\blacktriangleright$\hspace{-0.6em}}
+\usepackage{paralist}
+
+\begin{document}
+
+\setdefaultleftmargin{0em}{0em}{1.87em}{1.7em}{1em}{1em}
+\begin{center}
+	\large \textsc{Tourenbuch \#1}
+\end{center}
+
+\begin{multicols}{2}
+\begingroup
+	\fontsize{6pt}{8pt}\selectfont
+	{\footnotesize \textbf{Sommer YEAR}}
+	\begin{compactitem}
+		\item Foobar
+		\item Barfoo
+	\end{compactitem}
+	\vspace{0.5em}
+
+	{\footnotesize \textbf{Winter YEAR}}
+	\renewcommand{\labelitemi}{\color{skitour}$\blacktriangleright$\hspace{-0.6em}}
+	\begin{compactitem}
+		\item Foobar
+		\item Barfoo
+	\end{compactitem}
+	\vspace{0.5em}
+	{\footnotesize \textbf{Sommer YEAR}}
+	\begin{compactitem}
+		\renewcommand{\labelitemi}{\color{wandern}$\blacktriangleright$\hspace{-0.6em}}
+		\item Foobar
+		\renewcommand{\labelitemi}{\color{mtb}$\blacktriangleright$\hspace{-0.6em}}
+		\item Barfoo
+	\end{compactitem}
+\endgroup
+\end{multicols}
+
+\end{document}
