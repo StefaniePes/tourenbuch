@@ -1,0 +1,32 @@
+\input{meta/header}
+\begin{document}
+
+% create a TOC or not
+\newif\iftourbuch
+\tourbuchtrue   % titlepage with toc
+%\tourbuchfalse % no titlepage
+\iftourbuch
+	\title{Tourenbuch}
+	\author{XXX}
+	\maketitle
+	\tableofcontents
+\fi
+
+% gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=Tourenbuch.compressed.pdf tourenbuchFullpage.pdf
+
+% -dPDFSETTINGS=/screen   (screen-view-only quality, 72 dpi images)
+% -dPDFSETTINGS=/ebook    (low quality, 150 dpi images)
+% -dPDFSETTINGS=/printer  (high quality, 300 dpi images) -dColorConversionStrategy=/LeaveColorUnchanged
+% -dPDFSETTINGS=/prepress (high quality, color preserving, 300 dpi imgs)
+% -dPDFSETTINGS=/default  (almost identical to /screen)
+
+%%% 3 Bilder
+%% 2x 0.38 wide 1x 0.167 landscape
+
+%\include{meta/gear/packliste}
+%\include{meta/gear/packliste-transalp}
+
+\input{meta/seasonYYYY}}
+
+\end{document}
+
