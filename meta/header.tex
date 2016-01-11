@@ -1,0 +1,175 @@
+% Guidebook latex header
+% Changelog
+%   29.08.2015:
+%           - Added footmisc pkg wegen footnote options in Tabellen bei der Packliste für den Transalp
+%   30.08.2015:
+%           - Added csquotes pkg für komische Keyboardlayouts ohne quotes
+\documentclass[
+	  DIV=12
+	, a4paper
+	, fontsize=10pt
+	, footinclude
+	, headinclude
+	, plainfootsepline
+]{scrartcl}
+
+% german spelling
+\usepackage[ngerman]{babel}
+
+% fontenc VOR inputenc
+\usepackage[T1]{fontenc}
+
+% utf8 document
+\usepackage[utf8]{inputenc}
+
+% custom headers/footers
+\usepackage{scrpage2}
+
+% colors by names
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+% title modification
+\usepackage{titlesec}
+
+% line spacing
+\usepackage{setspace}
+
+\usepackage{csquotes}
+
+% nice Palatino font with old styled numbers
+\usepackage[osf]{mathpazo}
+% Palatino needs more leading (space between lines)
+\linespread{1.15}
+
+% use fullpage and exact margins
+\usepackage[
+%showframe
+, top=1.9cm, bottom=2.5cm
+, left=1.9cm, right=1.9cm
+, footskip=0.9cm
+, headheight=0cm
+]{geometry} % passt soweit 01.2016
+% old
+%\usepackage[showframe, top=1.9cm, bottom=3.3cm, left=1.9cm, right=1.9cm, headheight=0cm]{geometry} % passt soweit 05.2014
+
+
+% spaltige TOC
+\usepackage[toc]{multitoc}
+
+% text wrapping for pictures
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\captionsetup[wrapfigure]{labelformat=empty}
+\captionsetup[subfigure]{labelformat=empty}
+
+\usepackage[]{graphicx}
+%\usepackage[draft]{graphicx}
+
+
+\usepackage{overpic}
+\usepackage{epstopdf}
+%\usepackage[update,prepend]{epstopdf}
+
+\usepackage{footmisc}
+
+
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{nicefrac}
+\usepackage[export]{adjustbox}
+\usepackage[space]{grffile} % spaces in dateinamen
+%\setkeys{Gin}{resolution=300} %set resolution of pics to 300dpi...?!
+%\setkeys{Gin}{resolution=72}
+\pdfimageresolution=300
+% newline in table cells
+\usepackage{pbox}
+% Transparent Hoehenprofil
+\usepackage{transparent}
+\usepackage{eso-pic}
+\usepackage{picture}
+
+%\usepackage{pgfpages}
+\usepackage{pdfpages}
+
+
+% math packages
+\usepackage{amsmath,marvosym,textcomp,wasysym,amssymb}
+%\usepackage{amsmath,marvosym,textcomp}
+
+% arabische zaehlweise der subsection
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+% MTB       Maroon    #AF3235
+% Skitour   RoyalBlue #006EB8
+\definecolor{skitour}{RGB}{0,110,184}
+\definecolor{mtb}{RGB}{175,50,53}
+\definecolor{einkehr}{RGB}{60,128,49}
+\definecolor{wandern}{RGB}{0,155,85}
+
+\titleformat*{\subsection}{\normalfont\huge\bfseries\color{Maroon}}
+\titleformat*{\subsubsection}{\normalfont\large\bfseries\color{Maroon}}
+
+% \nosection tauchen nicht im text auf
+\newcommand{\nosection}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{}#1}%
+  \markright{#1}}
+\makeatletter
+\newcommand\invisiblesection[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}\phantom{}}
+\makeatother
+
+\usepackage{layouts} % get the \textwidth in cm
+% == 15.91774cm
+
+\usepackage{lastpage}
+
+
+\pagestyle{scrplain}
+\clearscrheadfoot{}
+\ifoot[\rightmark]{}
+\setfootsepline{.6pt}
+
+
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{units}
+\usepackage{array}
+% fancy table stuff
+\makeatletter
+\newcommand{\armultirow}[3]{%
+  \multicolumn{#1}{#2}{%
+    \begin{picture}(0,0)%
+      \put(0,0){%
+        \begin{tabular}[t]{@{}#2@{}}%
+          #3%
+        \end{tabular}%
+      }%
+    \end{picture}%
+  }%
+}%
+
+\newcolumntype{f}{>{$}l<{$}}
+\newcolumntype{n}{l}
+\newcolumntype{N}{>{\scriptsize}l}
+\newcolumntype{v}[1]{>{\raggedright\hspace{0pt}}p{#1}}
+\newcolumntype{V}[1]{>{\scriptsize\raggedright\hspace{0pt}}p{#1}}
+%
+% array.sty, dcolumn.sty
+\newcolumntype{B}[1]{>{\boldmath\DC@{.}{,}{#1}}l<{\DC@end}}
+\newcolumntype{b}[1]{>{\DC@{.}{,}{#1}}r<{\DC@end}}
+\newcolumntype{d}[1]{>{\DC@{.}{,}{#1}}l<{\DC@end}}
+\newcolumntype{s}[1]{>{\DC@{.}{,}{#1}\mathsf\bgroup}l<{\egroup\DC@end}}
+%
+% array.sty, rotating.sty
+\newcolumntype{R}[1]{%
+  >{\begin{turn}{90}\begin{minipage}{#1}\scriptsize\raggedright\hspace{0pt}}l%
+  <{\end{minipage}\end{turn}}%
+}
+%
+% array.sty, tabularx.sty
+\newcolumntype{x}{>{\scriptsize\raggedright\hspace{0pt}}X}
+\makeatother
+
