@@ -1,0 +1,80 @@
+% vim: set filetype=tex:
+%\input{meta/header}
+
+%\begin{document}
+\titleformat*{\subsubsection}{\normalfont\large\bfseries\color{skitour}}
+\titleformat*{\subsection}{\normalfont\huge\bfseries\color{skitour}}
+
+\subsection{Kleiner Daumen KL \small{2197m}}
+
+% create header
+\ohead[Fr, 20.03.2015]{}
+\graphicspath{{skitouren/kl.daumen-20.03.2015//}}
+\def \mypath{skitouren/kl.daumen-20.03.2015/}
+\cfoot[\vspace{-0.7em}  Allgäu - Vorderes Ostrachtal ]{}
+\ifoot[{\vspace{-2.7em} \includegraphics[scale=0.2]{meta/parkplatz/hinterstein.p} }]{}
+\ofoot[\vspace{-0.7em} Winter 2014/2015 $~\bullet$ S. \pagemark ]{}
+
+% create elevation profile
+\AddToShipoutPicture*{
+    \AtTextUpperLeft{
+        \put(14,-130){
+            \parbox[b][\paperheight]{\textwidth}{
+                \raggedleft
+                \adjustbox{max height=5.0cm, max width=.65\textwidth,keepaspectratio}{
+                    \input{skitouren/kl.daumen-20.03.2015//hoehenprofil.tex}
+                }
+            }
+        }
+    }
+}
+
+\def\arraystretch{1.3} % bessere Lesbarkeit im Kopfteil
+\vspace{-0.75em}
+{\small  \setstretch{1.3}
+% left table
+\begin{tabularx}{0.5\textwidth}{X X X X X}
+    \multicolumn{4}{c}{         \(\bigstar~\bigstar~\bigstar~\)}        \\
+    $\uparrow$                1.365{\scriptsize hm} &
+    $\rightsquigarrow$        13.4{\scriptsize km} &
+    LLB                         1               \\
+    \rule{0pt}{3ex} $\vec{t}$ 2:44{\scriptsize h} &
+    $\Delta t$                4:39{\scriptsize h} &
+    \Cross \space               3:40{\scriptsize h} \\
+    \clock\space                6.15         &
+    \multicolumn{2}{l}{ \smiley\space \pbox{2.8cm}{
+        \scriptsize{            Jojo }}
+    } \\
+
+    \multicolumn{2}{c}{         \(ZS-\)/2.1/Ex2 }   &
+    % empty lines for difficulty
+                                                    &
+                                                    \\
+    & \multicolumn{2}{c}{       \framebox{P} Hinterstein (2.50\euro{}) }
+
+\vspace{0.5em}
+\end{tabularx}
+}\\
+
+% create map
+\begin{wrapfigure}[28]{R}{0.46\textwidth}
+    \includegraphics[frame, width=0.46\textwidth]{karteninfo}
+    \vspace{-0.7em}
+\end{wrapfigure}
+\setstretch{1.0}
+
+\blindtext[3]
+
+\par 
+
+\begin{wrapfigure}[13]{l}{0.43\textwidth}
+\vspace{-1em}
+    \includegraphics[width=0.42\textwidth]{\mypath/bilder/summit}
+    \vspace{-3em}
+\end{wrapfigure}
+
+\noindent \(\blacktriangleright\) \blindtext
+
+\clearpage
+
+%\end{document}
