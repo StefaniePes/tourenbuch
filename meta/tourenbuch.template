@@ -1,0 +1,72 @@
+% vim: set filetype=tex:
+%\input{meta/header}
+
+%\begin{document}
+$if(skitour)$
+\titleformat*{\subsubsection}{\normalfont\large\bfseries\color{skitour}}
+\titleformat*{\subsection}{\normalfont\huge\bfseries\color{skitour}}
+$endif$
+
+\subsection{$titel$ \small{$hoehe$m}}
+
+% create header
+\ohead[$datum$]{}
+\graphicspath{{$pfad$/}}
+\def \mypath{$pfad$}
+\cfoot[\vspace{-0.7em}  $region$ ]{}
+\ifoot[{\vspace{-2.7em} \includegraphics[scale=0.2]{meta/parkplatz/$qr$} }]{}
+\ofoot[\vspace{-0.7em} $saison$ $$~\bullet$$ S. \pagemark ]{}
+
+% create elevation profile
+\AddToShipoutPicture*{
+    \AtTextUpperLeft{
+        \put($hoehenprofilx$,$hoehenprofily$){
+            \parbox[b][\paperheight]{\textwidth}{
+                \raggedleft
+                \adjustbox{max height=5.0cm, max width=.65\textwidth,keepaspectratio}{
+                    \input{$pfad$/hoehenprofil.tex}
+                }
+            }
+        }
+    }
+}
+
+\def\arraystretch{1.3} % bessere Lesbarkeit im Kopfteil
+\vspace{-0.75em}
+{\small  \setstretch{1.3}
+% left table
+\begin{tabularx}{$tabellengroesse$\textwidth}{X X X X X}
+    \multicolumn{4}{c}{         $bewertung$}        \\
+    $$\uparrow$$                $aufstieg${\scriptsize hm} &
+    $$\rightsquigarrow$$        $distanz${\scriptsize km} &
+    LLB                         $llb$               \\
+    \rule{0pt}{3ex} $$\vec{t}$$ $bewegungszeit${\scriptsize h} &
+    $$\Delta t$$                $gesamtzeit${\scriptsize h} &
+    \Cross \space               $gipfelzeit${\scriptsize h} \\
+    \clock\space                $startzeit$         &
+    \multicolumn{2}{l}{ \smiley\space \pbox{2.8cm}{
+        \scriptsize{            $begleitung$ }}
+    } \\
+
+    \multicolumn{2}{c}{         $schwierigkeit$ }   &
+    % empty lines for difficulty
+                                                    &
+                                                    \\
+    & \multicolumn{2}{c}{       $ausgangspunkt$ }
+
+\vspace{0.5em}
+\end{tabularx}
+}\\
+
+% create map
+\begin{wrapfigure}[$kartenhoehe$]{R}{$kartengroesse$\textwidth}
+    \includegraphics[frame, width=$kartengroesse$\textwidth]{karteninfo}
+    \vspace{-0.7em}
+\end{wrapfigure}
+\setstretch{1.0}
+
+$body$
+
+\clearpage
+
+%\end{document}
