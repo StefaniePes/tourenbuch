@@ -1,20 +1,13 @@
-% Guidebook latex header
 % Changelog
-%   29.08.2015:
+%   29.08.2015: 
 %           - Added footmisc pkg wegen footnote options in Tabellen bei der Packliste für den Transalp
-%   30.08.2015:
+%   30.08.2015
 %           - Added csquotes pkg für komische Keyboardlayouts ohne quotes
-\documentclass[
-	  DIV=12
-	, a4paper
-	, fontsize=10pt
-	, footinclude
-	, headinclude
-	, plainfootsepline
-]{scrartcl}
+\documentclass[DIV=12, a4paper, fontsize=10pt,footinclude,headinclude,plainfootsepline]{scrartcl}
 
 % german spelling
 \usepackage[ngerman]{babel}
+\usepackage{blindtext}
 
 % fontenc VOR inputenc
 \usepackage[T1]{fontenc}
@@ -23,7 +16,8 @@
 \usepackage[utf8]{inputenc}
 
 % custom headers/footers
-\usepackage{scrpage2}
+%\usepackage{scrpage2}
+\usepackage[]{scrlayer-scrpage}
 
 % colors by names
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
@@ -37,11 +31,13 @@
 \usepackage{csquotes}
 
 % nice Palatino font with old styled numbers
-\usepackage[osf]{mathpazo}
-% Palatino needs more leading (space between lines)
-\linespread{1.15}
+\usepackage[osf]{mathpazo} 
+%\usepackage{mathpazo}
 
-% use fullpage and exact margins
+\linespread{1.15}         % Palatino needs more leading (space between lines)
+
+% use fullpage and no margins
+%\usepackage[headings]{fullpage} % zu wenig rand
 \usepackage[
 %showframe
 , top=1.9cm, bottom=2.5cm
@@ -49,7 +45,6 @@
 , footskip=0.9cm
 , headheight=0cm
 ]{geometry} % passt soweit 01.2016
-% old
 %\usepackage[showframe, top=1.9cm, bottom=3.3cm, left=1.9cm, right=1.9cm, headheight=0cm]{geometry} % passt soweit 05.2014
 
 
@@ -96,11 +91,14 @@
 \usepackage{amsmath,marvosym,textcomp,wasysym,amssymb}
 %\usepackage{amsmath,marvosym,textcomp}
 
+% euro symbols
+\usepackage{eurosym}
+
 % arabische zaehlweise der subsection
 \renewcommand{\thesubsection}{\arabic{subsection}}
 
-% MTB       Maroon    #AF3235
-% Skitour   RoyalBlue #006EB8
+% MTB 		Maroon #AF3235
+% Skitour 	RoyalBlue #006EB8
 \definecolor{skitour}{RGB}{0,110,184}
 \definecolor{mtb}{RGB}{175,50,53}
 \definecolor{einkehr}{RGB}{60,128,49}
@@ -114,6 +112,11 @@
   \refstepcounter{section}%
   \addcontentsline{toc}{section}{\protect\numberline{}#1}%
   \markright{#1}}
+%\newcommand\invisiblesection[1]{%
+%  \refstepcounter{section}%
+%  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+%  \addcontentsline{toc}{section}{#1}
+%  \sectionmark{#1}}	
 \makeatletter
 \newcommand\invisiblesection[1]{%
   \refstepcounter{section}%
@@ -122,7 +125,7 @@
 \makeatother
 
 \usepackage{layouts} % get the \textwidth in cm
-% == 15.91774cm
+% 15.91774cm
 
 \usepackage{lastpage}
 
@@ -131,6 +134,8 @@
 \clearscrheadfoot{}
 \ifoot[\rightmark]{}
 \setfootsepline{.6pt}
+
+
 
 
 \usepackage{booktabs}
@@ -172,4 +177,5 @@
 % array.sty, tabularx.sty
 \newcolumntype{x}{>{\scriptsize\raggedright\hspace{0pt}}X}
 \makeatother
+
 
