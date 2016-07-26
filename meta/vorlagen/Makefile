@@ -11,7 +11,8 @@ GPXPLOT=meta/gpxplot.py
 
 # pandoc options
 PANDOCFLAGS=--from markdown+tex_math_dollars \
-            --template=$(PROJECTROOT)meta/tourenbuch.template
+            --template=template.pandoc
+            #--template=$(PROJECTROOT)meta/layout/$(LAYOUT).template.pandoc
 
 # get the last two directories
 CWD=$(shell basename $(shell dirname $(shell pwd)))/$(shell basename $(shell pwd))
@@ -20,6 +21,10 @@ all: tourenbuch
 
 skitour:
 	cp -r $(PROJECTROOT)meta/vorlagen/skitour/* .
+	cp $(PROJECTROOT)meta/vorlagen/layout/skitour.$(LAYOUT).template.pandoc template.pandoc
+mtb:
+	cp -r $(PROJECTROOT)meta/vorlagen/mtb/* .
+	cp $(PROJECTROOT)meta/vorlagen/layout/mtb.$(LAYOUT).template.pandoc template.pandoc
 
 gpxdata.txt:
 	python $(PROJECTROOT)$(GPXPLOT) input.gpx > $@
