@@ -1,0 +1,31 @@
+\titleformat*{\subsubsection}{\normalfont\large\bfseries\color{mtb}}
+\titleformat*{\subsection}{\normalfont\huge\bfseries\color{mtb}}
+
+\subsection{$title$}
+
+\ohead[$date$]{}
+\graphicspath{{$path$}}
+\def \mypath{$path$/}
+\cfoot[\vspace{-0.7em} $region$]{}
+\ifoot[{\vspace{-2.7em} \includegraphics[scale=0.2]{meta/parkplatz/$qr$} }]{}
+\ofoot[\vspace{-0.7em}  $saison$ $$~\bullet$$ S. \pagemark ]{}
+
+\begin{figure}[h]
+\vspace{-1.5em}
+{\scriptsize
+  \adjustbox{max height=5.8cm, max width=\textwidth,keepaspectratio}{
+    \input{\mypath/hoehenprofil.tex}
+  }
+}
+\end{figure}
+
+\vspace{-2.3em} % might be needed -1em
+\begin{wrapfigure}[$mapwrap$]{R}{$mapsize$\textwidth}
+\includegraphics[frame, width=$mapsize$\textwidth]{karteninfo}
+  \vspace{-0.7em}
+\end{wrapfigure}
+\setstretch{1.0}
+
+$body$
+
+\clearpage
