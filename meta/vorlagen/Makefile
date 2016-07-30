@@ -1,10 +1,10 @@
 # Makefile for Tourenbuch
 #
 
-.PHONY: register beschreibung.tex hoehenprofil.tex
+.PHONY: register beschreibung.tex elevation.tex marker
 
 SEASON=winter2016
-PROJECTROOT=/Users/ull/sport/tourenbuch/
+PROJECTROOT=/Users/ull/gefahrengut/sport/tourenbuch/
 
 # elevation profile
 GPXPLOT=meta/gpxplot.py
@@ -29,8 +29,8 @@ mtb:
 gpxdata.txt:
 	python $(PROJECTROOT)$(GPXPLOT) input.gpx > $@
 
-hoehenprofil.tex: gpxdata.txt
-	gnuplot hoehenprofil.plt
+elevation.tex: gpxdata.txt
+	gnuplot elevation.plt
 
 beschreibung.tex:
 	pandoc $(PANDOCFLAGS) beschreibung.md -o $@
@@ -46,7 +46,18 @@ else
 	@echo "$(CWD) already registered in $(SEASON).tex"
 endif
 
-tourenbuch: beschreibung.tex hoehenprofil.tex register
+marker:
+ifdef TOP
+	@sed -i bak -e '1,/TOP/s/TOP/$(TOP)/' elevation.plt
+	$(info marked $(TOP) as heighest point in the elevation profile)
+else
+	sed -i bak -e '1,/# set label III/s/# set label III/set label $(I)/' elevation.plt
+	sed -i bak -e '1,/NNN/s/NNN/$(N)/' elevation.plt
+	sed -i bak -e '1,/XXX/s/XXX/$(X)/' elevation.plt
+	sed -i bak -e '1,/YYY/s/YYY/$(Y)/' elevation.plt
+endif
+
+tourenbuch: beschreibung.tex elevation.tex register
 	cd $(PROJECTROOT); \
 	pdflatex $(PROJECTROOT)tourenbuch.tex -output-directory $(PROJECTROOT)
 
