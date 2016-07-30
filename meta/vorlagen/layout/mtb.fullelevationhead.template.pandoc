@@ -1,0 +1,63 @@
+% vim: set ft=tex:
+\titleformat*{\subsubsection}{\normalfont\large\bfseries\color{mtb}}
+\titleformat*{\subsection}{\normalfont\huge\bfseries\color{mtb}}
+
+\subsection{$title$}
+
+% -- [ Head
+\ohead[$date$]{}
+\graphicspath{{$path$}}
+\def \mypath{$path$/}
+\cfoot[\vspace{-0.7em} $region$]{}
+\ifoot[{\vspace{-2.7em} \includegraphics[scale=0.2]{meta/parkplatz/$qr$} }]{}
+\ofoot[\vspace{-0.7em}  $saison$ $$~\bullet$$ S. \pagemark ]{}
+% ] --
+
+% -- [ Elevation
+\begin{figure}[h]
+  \vspace{-1.0em}
+  {\scriptsize
+    \adjustbox{max height=5.8cm, max width=\textwidth,keepaspectratio}{
+      \input{\mypath/elevation.tex}
+    }
+  }
+\end{figure}
+\vspace{-1.0em}
+% ] --
+
+% -- [ Map
+\begin{wrapfigure}[$mapwrap$]{R}{$mapsize$\textwidth}
+  \vspace{-1.3em}
+  \includegraphics[frame, width=$mapsize$\textwidth]{karteninfo}
+  {\small  \setstretch{1.5}
+  \begin{tabularx}{$mapsize$\textwidth}{X X X X} %\heartsuit
+    \multicolumn{4}{c}{           $rating$  }                     \\
+    $$\uparrow$$                  $ascent${\scriptsize hm}        &
+    $$\rightsquigarrow$$          $distance${\scriptsize km}      &
+    $$\downdownarrows$$           {\scriptsize $difficulty$ }     &
+    $if(heartrate)$
+    $$\heartsuit$$                $heartrate$                     \\
+    $else$
+    \\
+    $endif$
+    \rule{0pt}{3ex} $$\vec{t}$$   $movingtime${\scriptsize h}     &
+    $$\Delta t$$                  $overalltime${\scriptsize h}    &
+    \multicolumn{1}{l}{ \smiley\space \pbox{2.8cm}{
+        \scriptsize{              $comrades$ }}}                  \\
+
+    \multicolumn{2}{c}{ \includegraphics{meta/graphics/restaurant}
+        \scriptsize{              $restaurant$ }}                 \\
+    \multicolumn{4}{c}{           $startpoint$ }
+
+  \vspace{-6em}
+  \end{tabularx}
+}\\
+\end{wrapfigure}
+
+\vspace{1em}
+% ] --
+\setstretch{1.0}
+
+$body$
+
+\clearpage
