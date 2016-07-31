@@ -28,7 +28,7 @@
 % -- [ Map
 \begin{wrapfigure}[$mapwrap$]{R}{$mapsize$\textwidth}
   \vspace{-1.3em}
-  \includegraphics[frame, width=$mapsize$\textwidth]{karteninfo}
+  \includegraphics[frame, width=$mapsize$\textwidth]{map}
   {\small  \setstretch{1.5}
   \begin{tabularx}{$mapsize$\textwidth}{X X X X} %\heartsuit
     \multicolumn{4}{c}{           $rating$  }                     \\
