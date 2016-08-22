@@ -3,8 +3,9 @@
 
 .PHONY: register beschreibung.tex elevation.tex marker
 
-SEASON=winter2016
+SEASON=sommer2016
 PROJECTROOT=/Users/ull/gefahrengut/sport/tourenbuch/
+LAYOUT=elevationfullhead
 
 # elevation profile
 GPXPLOT=meta/gpxplot.py
