@@ -5,7 +5,7 @@
 
 SEASON=sommer2016
 PROJECTROOT=/Users/ull/gefahrengut/sport/tourenbuch/
-LAYOUT=elevationfullhead
+LAYOUT=fullelevationhead
 
 # elevation profile
 GPXPLOT=meta/gpxplot.py
