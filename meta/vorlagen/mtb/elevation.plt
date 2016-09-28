@@ -51,12 +51,15 @@ h = floor((STATS_max_y - STATS_min_y) * myscaleHM) * 2.54 / 250 * 2
 
 # -- [ Labels ] --
 set label 1 '\textcolor{mtb}{TOP}' at STATS_pos_max_y,STATS_max_y point pointtype 7 ps 0.6 offset 0.3,0.3 front
-# set label III '\textcolor{mtb}{NNN}' at XXX,YYY point pointtype 7 ps 0.6 offset 0.3,0.3 front
-# set label III '\textcolor{mtb}{NNN}' at XXX,YYY point pointtype 7 ps 0.6 offset 0.3,0.3 front
-# set label III '\textcolor{mtb}{NNN}' at XXX,YYY point pointtype 7 ps 0.6 offset 0.3,0.3 front
-# set label III '\textcolor{mtb}{NNN}' at XXX,YYY point pointtype 7 ps 0.6 offset 0.3,0.3 front
-# set label III '\textcolor{mtb}{NNN}' at XXX,YYY point pointtype 7 ps 0.6 offset 0.3,0.3 front
-# set label III '\textcolor{mtb}{NNN}' at XXX,YYY point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
+# set label III '\textcolor{mtb}{NNN}' at XXX point pointtype 7 ps 0.6 offset 0.3,0.3 front
 
 
 # -- [ Terminal ] --

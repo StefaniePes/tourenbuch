@@ -55,7 +55,6 @@ else
 	sed -i bak -e '1,/# set label III/s/# set label III/set label $(I)/' elevation.plt
 	sed -i bak -e '1,/NNN/s/NNN/$(N)/' elevation.plt
 	sed -i bak -e '1,/XXX/s/XXX/$(X)/' elevation.plt
-	sed -i bak -e '1,/YYY/s/YYY/$(Y)/' elevation.plt
 endif
 
 tourenbuch: beschreibung.tex elevation.tex register
