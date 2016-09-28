@@ -25,13 +25,13 @@ page sections (see below).
 ## Usage
 *These steps are necessary for new activities*
 
-1. create a new directory in the respective sport folder
+1. create a new directory in the respective sport folder, naming the activity
 2. copy the [Makefile](meta/vorlagen/Makefile)
 3. run `$ make <activity type>` (eg. `$ make skitour`)
 4. place your `.gpx` file in the new directory and name it `input.gpx`.
 Then create the elevation profile `$ make gpxdata.txt`
 5. make your adjustments to the [elevation.plt](meta/vorlagen/mtb/elevation.plt)
-6. plot the elevation profile: `$ make elevation.plt` (resulting in a .pdf)
+6. plot the elevation profile: `$ make elevation.tex` (resulting in a .pdf)
 7. write your description in [beschreibung.md](skitouren/kl.daumen-20.03.2015/beschreibung.md)
 8. register the new tour in the seasonal guidebook: `$ make register`
 9. compile everything to a pdf: `$ make tourenbuch`
