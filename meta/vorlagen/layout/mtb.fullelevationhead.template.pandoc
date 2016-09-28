@@ -7,7 +7,7 @@
 % -- [ Head
 \ohead[$date$]{}
 \graphicspath{{$path$}}
-\def \mypath{$path$/}
+\def \mypath{$path$}
 \cfoot[\vspace{-0.7em} $region$]{}
 \ifoot[{\vspace{-2.7em} \includegraphics[scale=0.2]{meta/parkplatz/$qr$} }]{}
 \ofoot[\vspace{-0.7em}  $saison$ $$~\bullet$$ S. \pagemark ]{}
@@ -30,12 +30,13 @@
   \vspace{-1.3em}
   \includegraphics[frame, width=$mapsize$\textwidth]{map}
   {\small  \setstretch{1.5}
-  \begin{tabularx}{$mapsize$\textwidth}{X X X X} %\heartsuit
-    \multicolumn{4}{c}{           $rating$  }                     \\
+  \begin{tabularx}{$mapsize$\textwidth}{X X X} %\heartsuit
+    \multicolumn{3}{c}{           $rating$  }                     \\
     $$\uparrow$$                  $ascent${\scriptsize hm}        &
     $$\rightsquigarrow$$          $distance${\scriptsize km}      &
-    $$\downdownarrows$$           {\scriptsize $difficulty$ }     &
+    $$\downdownarrows$$           {\scriptsize $difficulty$ }
     $if(heartrate)$
+      &
     $$\heartsuit$$                $heartrate$                     \\
     $else$
     \\
@@ -47,7 +48,7 @@
 
     \multicolumn{2}{c}{ \includegraphics{meta/graphics/restaurant}
         \scriptsize{              $restaurant$ }}                 \\
-    \multicolumn{4}{c}{           $startpoint$ }
+    \multicolumn{3}{c}{           $startpoint$ }
 
   \vspace{-6em}
   \end{tabularx}
